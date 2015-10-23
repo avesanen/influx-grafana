@@ -1,0 +1,15 @@
+influxdb:
+ build: ./influx
+ volumes:
+ - "/var/influxdb:/influxdb"
+ ports:
+ - "127.0.0.1:8083:8083"
+ - "127.0.0.1:8086:8086"
+grafana:
+ build: ./grafana
+ volumes:
+ - "/var/grafana:/grafana"
+ ports:
+ - "127.0.0.1:3001:3000"
+ links:
+ - influxdb

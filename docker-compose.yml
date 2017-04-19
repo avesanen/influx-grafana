@@ -10,6 +10,6 @@ grafana:
  volumes:
  - "/var/grafana:/grafana"
  ports:
- - "127.0.0.1:3001:3000"
+ - "0.0.0.0:3001:3000"
  links:
  - influxdb
